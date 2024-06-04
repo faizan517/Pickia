@@ -9,34 +9,80 @@ import ForgotPassword from '../screens/ForgotPassword';
 import HomeScreen from '../screens/main/HomeScreen';
 import Categories from '../screens/main/Categories';
 import SubCategories from '../screens/main/SubCategories';
-
+import Icons from '../utils/Icons';
+import Vector from '../assets/svgs/vector.svg';
+import Cart from '../assets/svgs/cart.svg';
+import ProductList from '../screens/main/ProductList';
+import Colors from '../utils/Colors';
 
 const Stack = createNativeStackNavigator();
-// const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
-// function TabsNavigation() {
-//   return (
-//     <Tab.Navigator>
-//       <Tab.Screen name="HomeScreen" component={HomeScreen} />
-//       <Tab.Screen name="Login" component={Login} />
-//     </Tab.Navigator>
-//   );
-// }
-function Navigation() {
+function TabsNavigation() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        
+        }}>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Categori" component={Categories} />
+
+      {/* <Tab.Screen name="Login" component={Login} /> */}
+    </Tab.Navigator>
+  );
+}
+function Navigation({navigation}) {
   return (
     <NavigationContainer>
       <Stack.Navigator
+      
         screenOptions={{
-          headerShown: false,
+          contentStyle:{
+            backgroundColor:Colors.white
+          }
         }}
         initialRouteName="Login">
-        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen
+          name="Signup"
+          component={Signup}
+          // options={{
+          //   headerRight: () => (
+          //     <Cart
+          //       name="arrow-back"
+          //       size={25}
+          //       backgroundColor="transparent"
+          //       color="black"
+          //       onPress={() => {
+          //         navigation.navigate('Login')
+          //       }}
+          //     />
+          //   ),
+          // }}
+        />
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        {/* <Stack.Screen name="TabsNavigation" component={TabsNavigation} /> */}
+        <Stack.Screen
+          name="ForgotPassword"
+          component={ForgotPassword}
+          options={{
+            headerRight: () => (
+              <Vector
+                name="arrow-back"
+                size={35}
+                backgroundColor="transparent"
+                color="black"
+                onPress={() => {
+                  // Add your navigation logic here
+                }}
+              />
+            ),
+          }}
+        />
+        {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
+        <Stack.Screen name="HomeScreen" component={TabsNavigation} />
         <Stack.Screen name="Categories" component={Categories} />
         <Stack.Screen name="SubCategories" component={SubCategories} />
+        <Stack.Screen name="ProductList" component={ProductList} />
 
       </Stack.Navigator>
     </NavigationContainer>

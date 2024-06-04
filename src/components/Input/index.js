@@ -1,6 +1,7 @@
 import React, {StyleSheet, Text, TextInput,Dimensions} from 'react-native';
 import {View} from 'react-native';
 import Colors from '../../utils/Colors';
+import Fonts from '../../utils/Fonts';
 
 const{ height,width} = Dimensions.get('window')
 
@@ -17,6 +18,7 @@ const Input = props => {
       <TextInput
         style={styles.input}
         placeholder={placeholder}
+        placeholderTextColor={Colors.black}
         editable={editable}
         keyboardType={keyboardType}
       />
@@ -27,13 +29,13 @@ const styles = StyleSheet.create({
   container: {
     width: width*0.85,
     alignSelf: 'center',
-    backgroundColor:'pink'
   },
   title: {
     fontSize: 0.06 * width,
     fontWeight: '400',
     marginLeft: 1,
-    color:Colors.black,
+    color:Colors.borderGray,
+    ...Fonts.PoppinsRegular,
   },
   input: {
     fontSize: 0.05 * width,

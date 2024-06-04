@@ -1,7 +1,8 @@
 import React, {StyleSheet, Text, TextInput, Dimensions} from 'react-native';
 import {View} from 'react-native';
 import Icons from '../../utils/Icons';
-import Vector from '../../assets/svgs/vector.svg';
+import Colors from '../../utils/Colors';
+
 
 const {height, width} = Dimensions.get('window');
 
@@ -13,13 +14,14 @@ const Search = props => {
     style,
   } = props;
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <View style={styles.icon}>
-        <Vector height={20} width={20} />
+        <Icons.Vector height={20} width={20} />
       </View>
       <TextInput
-        style={[styles.input, style]}
+        style={styles.input }
         placeholder={placeholder}
+        placeholderTextColor={Colors.borderGray}
         editable={editable}
         keyboardType={keyboardType}
       />
@@ -28,11 +30,11 @@ const Search = props => {
 };
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: width*0.9,
     alignSelf: 'center',
     borderWidth: 1,
     borderRadius: 10,
-    borderColor: 'rgba(55, 183, 108, 1)',
+    borderColor: Colors.primary,
     flexDirection:'row',
     alignItems:'center',
     paddingHorizontal:10,
@@ -40,12 +42,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 0.06 * width,
     fontWeight: '400',
+    color:Colors.black,
   },
   input: {
-    fontSize: 0.05 * width,
-    paddingHorizontal:10
-    // borderWidth: 1,
-    // borderRadius: 10,
+    fontSize: 0.045 * width,
+    paddingHorizontal:10,
   },
   // icon:{
   //   position:'absolute',
