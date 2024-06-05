@@ -11,9 +11,12 @@ import Categories from '../screens/main/Categories';
 import SubCategories from '../screens/main/SubCategories';
 import Icons from '../utils/Icons';
 import Vector from '../assets/svgs/vector.svg';
-import Cart from '../assets/svgs/cart.svg';
+import CartIcon from '../assets/svgs/cart.svg';
 import ProductList from '../screens/main/ProductList';
 import Colors from '../utils/Colors';
+import ProductDetails from '../screens/main/ProductDetails';
+import Cart from '../screens/main/Cart';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -46,19 +49,7 @@ function Navigation({navigation}) {
         <Stack.Screen
           name="Signup"
           component={Signup}
-          // options={{
-          //   headerRight: () => (
-          //     <Cart
-          //       name="arrow-back"
-          //       size={25}
-          //       backgroundColor="transparent"
-          //       color="black"
-          //       onPress={() => {
-          //         navigation.navigate('Login')
-          //       }}
-          //     />
-          //   ),
-          // }}
+          
         />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen
@@ -83,6 +74,13 @@ function Navigation({navigation}) {
         <Stack.Screen name="Categories" component={Categories} />
         <Stack.Screen name="SubCategories" component={SubCategories} />
         <Stack.Screen name="ProductList" component={ProductList} />
+        <Stack.Screen name="ProductDetails" component={ProductDetails} />
+        <Stack.Screen
+         name="Cart" component={Cart} 
+        //  options={({ route }) => ({ title: route.params.name })}
+         />
+
+
 
       </Stack.Navigator>
     </NavigationContainer>

@@ -29,7 +29,7 @@ const ProductList = ({navigation}) => {
   ];
 
   const renderItem = ({ item }) => (
-    <Product />
+    <Product style={styles.Productlist} onPress={()=>navigation.navigate('ProductDetails')} />
   );
   return (
     <SafeAreaView
@@ -49,29 +49,15 @@ const ProductList = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // width: width,
-    // height: height,
-    // alignItems: 'center',
-    // justifyContent: 'space-evenly',
-    // flexWrap:'wrap',
-    // flexDirection: 'row',
-    // padding: 15,
-    // backgroundColor: 'skyblue',
+    flex: 1,
   },
   ProductListView: {
-    // flex: 1,
-    // width: width * 0.9,
-    // height: height * 0.8,
-    // flexWrap: 'wrap',
-    // flexDirection: 'column',
-    // justifyContent: 'center',
-    // alignContent:'space-between',
-    // alignItems:'',
-    alignSelf: 'center',
-    // backgroundColor: 'pink',
-    // flexGrow:10
-    
+    alignItems:'center',
+    // backgroundColor: 'skyblue',
   },
+  Productlist:{
+    margin: 15,
+    alignItems: 'center',
+  }
 });
 export default ProductList;

@@ -5,14 +5,19 @@ import React, {
   Dimensions,
   View,
   Image,
-  SafeAreaView
+  SafeAreaView,
 } from 'react-native';
 import AddBtn from '../addBtn';
 import Fonts from '../../utils/Fonts';
 import Colors from '../../utils/Colors';
+import Minus from '../../assets/svgs/minus.svg';
+import {useState} from 'react';
+import Icons from '../../utils/Icons';
+
 const {height, width} = Dimensions.get('window');
 
 const Product = props => {
+  const [count, setCount] = useState(1);
   const {
     title = 'Barkar oil',
     type = 'gama',
@@ -25,7 +30,7 @@ const Product = props => {
     navigation,
   } = props;
   return (
-    <SafeAreaView >
+    <SafeAreaView>
       {type === 'alpha' && (
         <View style={styles.conatiner}>
           <View style={styles.primary}>
@@ -82,11 +87,10 @@ const Product = props => {
               borderRadius: 10,
             },
             style,
-          ]}
-          >
-          <View style={styles.primary}>
+          ]}>
+          <TouchableOpacity style={styles.primary} onPress={onPress}>
             <Image source={require('../../assets/logos/barkat.png')} />
-          </View>
+          </TouchableOpacity>
           <View style={[styles.secondry, {width: width * 0.285}]}>
             <Text style={styles.heading}>{title}</Text>
             <Text style={styles.heading2}>{weightTitle}</Text>
@@ -99,7 +103,12 @@ const Product = props => {
                 PKR{'\n'}
                 {pkrTitle}
               </Text>
-              <AddBtn style={[styles.btn,{width: width * 0.095 ,  height: height * 0.045,}]}/>
+              <AddBtn
+                style={[
+                  styles.btn,
+                  {width: width * 0.095, height: height * 0.045},
+                ]}
+              />
             </View>
           </View>
         </View>
@@ -139,6 +148,94 @@ const Product = props => {
             </Text>
           </View>
         </TouchableOpacity>
+      )}
+      {type === 'sigma' && (
+        <View
+          style={[
+            styles.conatiner,
+            {
+              flexDirection: 'row',
+              width: width*0.9,
+              height: height * 0.15,
+              // borderTopWidth: 0.5,
+              // borderBottomWidth: 0.5,
+              // borderRadius: 10,
+            },
+            style,
+          ]}>
+          <TouchableOpacity
+            style={[styles.primary, {bottom: 10}]}
+            onPress={onPress}>
+            <Image source={require('../../assets/logos/barkat.png')} />
+          </TouchableOpacity>
+          <View
+            style={[
+              {
+                width: width * 0.63,
+                height: height * 0.12,
+                justifyContent: 'space-between',
+                // backgroundColor: 'red',
+              },
+            ]}>
+            <View style={[{flexDirection: 'row'}]}>
+              <Text style={[styles.heading, {fontSize: width * 0.045}]}>
+                {title}
+              </Text>
+
+              <Text
+                style={[
+                  styles.heading2,
+                  {textAlign: 'right', marginLeft: 10, fontSize: width * 0.035},
+                ]}>
+                {weightTitle}
+              </Text>
+              <TouchableOpacity
+                style={[{width: width * 0.7, alignItems: 'center'}]}>
+                <Icons.Dots height={30} width={30} />
+              </TouchableOpacity>
+            </View>
+            <View style={[{}]}>
+              <Text
+                style={[
+                  styles.heading2,
+                  {textAlign: 'left', fontSize: width * 0.037},
+                ]}>
+                Banaspati
+              </Text>
+            </View>
+            <View style={styles.countView}>
+              <TouchableOpacity
+                style={styles.heading}
+                onPress={() => setCount(count - 1)}>
+                <Icons.Trash height={20} width={20} />
+              </TouchableOpacity>
+              <Text
+                style={[
+                  styles.detailDis,
+                  {color: Colors.primary, fontSize: width * 0.05},
+                ]}>
+                {count}{' '}
+              </Text>
+              <TouchableOpacity
+                style={styles.heading}
+                onPress={() => setCount(count + 1)}>
+                <Icons.Plus3 height={25} width={25} />
+                {/* <Text style={styles.countHead}>+</Text> */}
+              </TouchableOpacity>
+            </View>
+            <Text
+              style={[
+                styles.heading2,
+                {
+                  textAlign: 'left',
+                  color: Colors.primary,
+                  fontSize: width * 0.04,
+                },
+              ]}>
+              PKR 700
+            </Text>
+          </View>
+        </View>
       )}
     </SafeAreaView>
   );
@@ -180,6 +277,16 @@ const styles = StyleSheet.create({
   btn: {
     width: width * 0.07,
     height: height * 0.033,
+  },
+  countView: {
+    flexDirection: 'row',
+    // borderWidth: 1,
+    width: width * 0.29,
+    justifyContent: 'space-between',
+    textAlign: 'center',
+    alignItems: 'center',
+    // borderRadius: 5,
+    // borderColor: 'lightgray',
   },
 });
 export default Product;

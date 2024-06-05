@@ -4,7 +4,7 @@ export default {
   black: '#000',
   white: '#fff',
   borderGray: 'background: rgba(124, 124, 124, 1)',
-  // gray: '#989898',
+  lightGray: 'rgba(111, 207, 151, 0.24)',
   // tint: '#f2f2f2',
   // placeholder: '#939393',
   // otpBg: '#F0F0F0',
