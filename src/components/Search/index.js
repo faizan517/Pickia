@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     color:Colors.black,
   },
   input: {
+    flex:1,
     fontSize: 0.045 * width,
     paddingHorizontal:10,
   },

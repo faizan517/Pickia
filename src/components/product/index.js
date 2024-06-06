@@ -28,6 +28,7 @@ const Product = props => {
     style = {},
     image,
     navigation,
+    isWishList,
   } = props;
   return (
     <SafeAreaView>
@@ -155,11 +156,8 @@ const Product = props => {
             styles.conatiner,
             {
               flexDirection: 'row',
-              width: width*0.9,
+              width: width * 0.9,
               height: height * 0.15,
-              // borderTopWidth: 0.5,
-              // borderBottomWidth: 0.5,
-              // borderRadius: 10,
             },
             style,
           ]}>
@@ -174,7 +172,6 @@ const Product = props => {
                 width: width * 0.63,
                 height: height * 0.12,
                 justifyContent: 'space-between',
-                // backgroundColor: 'red',
               },
             ]}>
             <View style={[{flexDirection: 'row'}]}>
@@ -191,10 +188,10 @@ const Product = props => {
               </Text>
               <TouchableOpacity
                 style={[{width: width * 0.7, alignItems: 'center'}]}>
-                <Icons.Dots height={30} width={30} />
+                {isWishList ? '' : <Icons.Dots height={30} width={30} />}
               </TouchableOpacity>
             </View>
-            <View style={[{}]}>
+            <View>
               <Text
                 style={[
                   styles.heading2,
@@ -234,6 +231,11 @@ const Product = props => {
               ]}>
               PKR 700
             </Text>
+
+            <View style={[{flexDirection: 'row'}]}>
+              <Icons.Edit2 height={15} width={15} />
+              <Text style={styles.heading2}> Edit</Text>
+            </View>
           </View>
         </View>
       )}
@@ -243,8 +245,9 @@ const Product = props => {
 const styles = StyleSheet.create({
   conatiner: {
     alignItems: 'center',
-    width: width * 0.23,
-    height: height * 0.15,
+    width: width * 0.25,
+    height: height * 0.17,
+    // backgroundColor:'red'
   },
   primary: {
     flex: 1,
@@ -262,14 +265,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   heading: {
-    fontFamily: 'Poppins',
+    ...Fonts.PoppinsRegular,
     fontWeight: '900',
     fontSize: width * 0.04,
     textAlign: 'center',
     color: 'black',
   },
   heading2: {
-    fontFamily: 'Poppins',
+    ...Fonts.PoppinsRegular,
     fontSize: width * 0.03,
     textAlign: 'center',
     color: 'black',
