@@ -10,7 +10,7 @@ import HomeScreen from '../screens/main/HomeScreen';
 import Categories from '../screens/main/Categories';
 import SubCategories from '../screens/main/SubCategories';
 import Icons from '../utils/Icons';
-import Vector from '../assets/svgs/vector.svg';
+// import Vector from '../assets/svgs/vector.svg';
 import CartIcon from '../assets/svgs/cart.svg';
 import ProductList from '../screens/main/ProductList';
 import Colors from '../utils/Colors';
@@ -21,7 +21,10 @@ import Notification from '../screens/main/Notification';
 import WishList from '../screens/main/WishList';
 import ContactUS from '../screens/main/ContactUs';
 import AboutUs from '../screens/main/AboutUs';
-import TermsAndCondition from '../screens/main/Terms'
+import TermsAndCondition from '../screens/main/Terms';
+import PromoCode from '../screens/main/PromoCode';
+import MyOrders from '../screens/main/MyOrders';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -32,11 +35,74 @@ function TabsNavigation() {
       screenOptions={{
         headerShown: false,
       }}>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Categories" component={Categories} />
-      <Tab.Screen name="Details" component={Details} />
-      <Tab.Screen name="Notification" component={Notification} />
-      <Tab.Screen name="Wishlist" component={WishList} />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Store',
+          tabBarItemStyle: {
+            margin: 5,
+          },
+          tabBarActiveTintColor: Colors.primary,
+          tabBarIcon: ({color, size}) => (
+            <Icons.Store color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Details"
+        component={Details}
+        options={{
+          tabBarLabel: 'Details',
+          tabBarItemStyle: {
+            margin: 5,
+          },
+          tabBarActiveTintColor: Colors.primary,
+          tabBarIcon: ({color, size}) => (
+            <Icons.User color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Categories"
+        component={Categories}
+        options={{
+          tabBarItemStyle: {
+            margin: 5,
+          },
+          tabBarActiveTintColor: Colors.primary,
+          tabBarLabel: 'Categories',
+          tabBarIcon: ({color, size}) => (
+            <Icons.List color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Notification"
+        component={Notification}
+        options={{
+          tabBarItemStyle: {
+            margin: 5,
+          },
+          tabBarActiveTintColor: Colors.primary,
+          tabBarLabel: 'Notification',
+          tabBarIcon: ({color, size}) => (
+            <Icons.Bell color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Wishlist"
+        component={WishList}
+        options={{
+          tabBarLabel: 'Wishlist',
+          tabBarItemStyle: {
+            margin: 5,
+          },
+          tabBarActiveTintColor: Colors.primary,
+          tabBarIcon: ({}) => <Icons.Heart2 size={20} />,
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -45,35 +111,43 @@ function Navigation({navigation}) {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerShown: false,
+          // headerShown: false,
+          headerRight: () => (
+            <Icons.CartIcon
+              name="Cart"
+              size={35}
+              backgroundColor="transparent"
+              color="black"
+              onPress={() => {
+                navigation.navigate('Cart')
+              }}
+            />
+          ),
           contentStyle: {
             backgroundColor: Colors.white,
             headerShown: false,
           },
         }}
         initialRouteName="Login">
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={Signup} options={{
+          headerShown: false,
+          }} />
+        <Stack.Screen name="Login" component={Login} options={{
+          headerShown: false,
+          }} />
         <Stack.Screen
           name="ForgotPassword"
           component={ForgotPassword}
           options={{
-            headerRight: () => (
-              <Vector
-                name="arrow-back"
-                size={35}
-                backgroundColor="transparent"
-                color="black"
-                onPress={() => {
-                  // Add your navigation logic here
-                }}
-              />
-            ),
+          headerShown: false,
           }}
         />
         {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
         <Stack.Screen name="HomeScreen" component={TabsNavigation} />
-        <Stack.Screen name="Categories" component={Categories} />
+        <Stack.Screen
+          name="Categories"
+          component={Categories}
+        />
         <Stack.Screen name="Details" component={Details} />
         <Stack.Screen name="Notification" component={Notification} />
         <Stack.Screen name="WishList" component={WishList} />
@@ -83,12 +157,13 @@ function Navigation({navigation}) {
         <Stack.Screen name="ContactUS" component={ContactUS} />
         <Stack.Screen name="AboutUs" component={AboutUs} />
         <Stack.Screen name="Terms" component={TermsAndCondition} />
+        <Stack.Screen name="PromoCode" component={PromoCode} />
+        <Stack.Screen name="MyOrders" component={MyOrders} />
 
 
         <Stack.Screen
           name="Cart"
           component={Cart}
-          //  options={({ route }) => ({ title: route.params.name })}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -24,7 +24,7 @@ const Details = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.CoverView}></View>
       <View style={styles.DetailsView}>
-        <TouchableOpacity style={styles.disView}>
+        <TouchableOpacity style={styles.disView} onPress={()=>navigation.navigate('MyOrders')}>
           <Icons.CartIcon height={20} width={20}/>
           <Text style={styles.heading}>My Orders</Text>
         </TouchableOpacity>
@@ -32,12 +32,12 @@ const Details = ({navigation}) => {
           <Icons.ProfileDetails height={20} width={20} />
           <Text style={styles.heading}>Profile Details</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.disView}>
+        <TouchableOpacity style={styles.disView} >
           <Icons.Deliveryaddress height={20} width={20}/>
           <Text style={styles.heading}>Delivery Address</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.disView}>
-          <Icons.PromoCode />
+        <TouchableOpacity style={styles.disView} onPress={()=>navigation.navigate('PromoCode')}>
+          <Icons.PromoCode   />
           <Text style={styles.heading}>Promo Code</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.disView} onPress={()=>navigation.navigate('ContactUS')}>

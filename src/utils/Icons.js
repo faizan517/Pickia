@@ -2,6 +2,7 @@ import Vector from '../assets/svgs/vector.svg';
 import Plus from '../assets/svgs/plus.svg';
 import CartIcon from '../assets/svgs/cart.svg';
 import Heart from '../assets/svgs/heart.svg';
+import Heart2 from '../assets/svgs/heart2.svg';
 import FilledHeart from '../assets/svgs/filledheart.svg';
 import Minus from '../assets/svgs/minus.svg';
 import Plus2 from '../assets/svgs/plus2.svg';
@@ -19,14 +20,12 @@ import PromoCode from '../assets/svgs/PromoCode.svg';
 import PhoneCall from '../assets/svgs/phonecall.svg';
 import Logout from '../assets/svgs/logout.svg';
 import Edit2 from '../assets/svgs/edit2.svg';
+import Store from '../assets/svgs/store.svg';
 
+import List from '../assets/svgs/list.svg';
 
-
-
-
-
-
-
+import Bell from '../assets/svgs/bell.svg';
+import User from '../assets/svgs/user.svg';
 
 const Icons = {
   Vector,
@@ -50,5 +49,10 @@ const Icons = {
   PhoneCall,
   Logout,
   Edit2,
+  Store,
+  List,
+  Bell,
+  User,
+  Heart2,
 };
 export default Icons;
