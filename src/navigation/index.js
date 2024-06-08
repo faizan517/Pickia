@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
@@ -24,6 +24,12 @@ import AboutUs from '../screens/main/AboutUs';
 import TermsAndCondition from '../screens/main/Terms';
 import PromoCode from '../screens/main/PromoCode';
 import MyOrders from '../screens/main/MyOrders';
+import ViewProfile from '../screens/main/ViewProfile';
+import CheckOut1 from '../screens/main/CheckOut1';
+import CheckOut2 from '../screens/main/CheckOut2';
+import CheckOut3 from '../screens/main/CheckOut3';
+import DeliveryAddress from '../screens/main/DeliveryAddress';
+import Intro from '../screens/Intro';
 
 
 const Stack = createNativeStackNavigator();
@@ -110,45 +116,61 @@ function Navigation({navigation}) {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{
-          // headerShown: false,
+        screenOptions={({navigation}) => ({
           headerRight: () => (
-            <Icons.CartIcon
-              name="Cart"
-              size={35}
-              backgroundColor="transparent"
-              color="black"
+            <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Cart')
-              }}
-            />
+                navigation.navigate('Cart');
+              }}>
+              <Icons.CartIcon
+                name="Cart"
+                size={35}
+                backgroundColor="transparent"
+                color="black"
+              />
+            </TouchableOpacity>
           ),
           contentStyle: {
             backgroundColor: Colors.white,
-            headerShown: false,
           },
-        }}
-        initialRouteName="Login">
-        <Stack.Screen name="Signup" component={Signup} options={{
-          headerShown: false,
-          }} />
-        <Stack.Screen name="Login" component={Login} options={{
-          headerShown: false,
-          }} />
+        })}
+        initialRouteName="Intro">
+          <Stack.Screen
+          name="Intro"
+          component={Intro}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Signup"
+          component={Signup}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="ForgotPassword"
           component={ForgotPassword}
           options={{
-          headerShown: false,
+            headerShown: false,
           }}
         />
         {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
         <Stack.Screen name="HomeScreen" component={TabsNavigation} />
+        <Stack.Screen name="Categories" component={Categories} />
         <Stack.Screen
-          name="Categories"
-          component={Categories}
+          name="Details"
+          component={Details}
+          options={{headerShown: false}}
         />
-        <Stack.Screen name="Details" component={Details} />
         <Stack.Screen name="Notification" component={Notification} />
         <Stack.Screen name="WishList" component={WishList} />
         <Stack.Screen name="SubCategories" component={SubCategories} />
@@ -159,12 +181,13 @@ function Navigation({navigation}) {
         <Stack.Screen name="Terms" component={TermsAndCondition} />
         <Stack.Screen name="PromoCode" component={PromoCode} />
         <Stack.Screen name="MyOrders" component={MyOrders} />
+        <Stack.Screen name="ViewProfile" component={ViewProfile} />
+        <Stack.Screen name="CheckOut1" component={CheckOut1} />
+        <Stack.Screen name="CheckOut2" component={CheckOut2} />
+        <Stack.Screen name="CheckOut3" component={CheckOut3} />
+        <Stack.Screen name="Cart" component={Cart} />
+        <Stack.Screen name="DeliveryAddress" component={DeliveryAddress} />
 
-
-        <Stack.Screen
-          name="Cart"
-          component={Cart}
-        />
       </Stack.Navigator>
     </NavigationContainer>
   );

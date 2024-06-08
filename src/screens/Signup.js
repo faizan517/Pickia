@@ -20,7 +20,7 @@ const {height, width} = Dimensions.get('window');
 
 const Signup = ({navigation}) => {
   return (
-    <KeyboardAwareScrollView>
+    <KeyboardAwareScrollView style={{backgroundColor: Colors.white}}>
       <SafeAreaView style={styles.container}>
         <View style={styles.primary}>
           <Image

@@ -128,14 +128,8 @@ const Product = props => {
               elevation: 1,
             },
           ]}>
-          <View style={[styles.primary, {justifyContent: 'flex-end'}]}>
-            <Image style={{}} source={require('../../assets/logos/Rice.png')} />
-          </View>
-          <View
-            style={[
-              styles.secondry,
-              {alignItems: 'center', justifyContent: 'center'},
-            ]}>
+          <View style={[styles.primary, {justifyContent: 'space-evenly', flexDirection:'row',}]}>
+            <Image source={require('../../assets/logos/Rice.png')} />
             <Text
               style={[
                 styles.heading,

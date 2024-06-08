@@ -11,10 +11,12 @@ const Input = props => {
     placeholder = 'Email',
     editable,
     keyboardType = 'default',
+    style,
+    ptitleStyle,
   } = props;
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+    <View style={[styles.container,style]}>
+      <Text style={[styles.title,ptitleStyle]}>{title}</Text>
       <TextInput
         style={styles.input}
         placeholder={placeholder}
@@ -29,6 +31,7 @@ const styles = StyleSheet.create({
   container: {
     width: width*0.85,
     alignSelf: 'center',
+    // backgroundColor:'red',
   },
   title: {
     fontSize: 0.06 * width,

@@ -16,6 +16,7 @@ const Btn = props => {
     onPress = () => {},
     disabled = false,
     style = {},
+    textStyle={},
     isTrue = false,
   } = props;
   return (
@@ -24,7 +25,7 @@ const Btn = props => {
       onPress={onPress}
       disabled={disabled}>
       {isTrue && <Icons.Logout height={20} width={20} />}
-      <Text style={styles.title}>{title}</Text>
+      <Text style={[styles.title,textStyle]}>{title}</Text>
     </TouchableOpacity>
   );
 };

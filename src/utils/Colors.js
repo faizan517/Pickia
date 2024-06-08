@@ -3,6 +3,7 @@ export default {
   secondary: '#',
   black: '#000',
   white: '#fff',
+  white2: '  background: rgba(227, 229, 229, 1)',
   borderGray: 'background: rgba(124, 124, 124, 1)',
   lightGray: 'rgba(111, 207, 151, 0.24)',
   // tint: '#f2f2f2',

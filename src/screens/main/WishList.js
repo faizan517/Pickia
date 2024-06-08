@@ -66,7 +66,7 @@ const WishList = ({navigation, route}) => {
           {height: height * 0.14, justifyContent: 'space-between', top: 50},
         ]}>
           
-        <Btn title="Secure Checkout" />
+        <Btn title="Add to Cart" />
         <Btn title="Clear Cart" />
       </View>
     </SafeAreaView>
@@ -139,9 +139,8 @@ const styles = StyleSheet.create({
     height: height * 0.1,
   },
   ScrollView:{
-    height:height*0.6,
+    height:height*0.55,
     width:width,
-    // backgroundColor:"orange"
   }
 });
 export default WishList;

@@ -85,7 +85,7 @@ const Cart = ({navigation, route}) => {
         style={[
           {height: height * 0.14, justifyContent: 'space-between', top: 50},
         ]}>
-        <Btn title="Secure Checkout" />
+        <Btn title="Secure Checkout" onPress={()=>navigation.navigate('CheckOut1')}/>
         <Btn title="Clear Cart" />
       </View>
     </SafeAreaView>

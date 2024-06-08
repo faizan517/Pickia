@@ -1,5 +1,4 @@
 import React from 'react';
-import Product from '../../components/product';
 import {
   Text,
   View,
@@ -11,10 +10,10 @@ import {
   Dimensions,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import Search from '../../components/Search';
 import Colors from '../../utils/Colors';
 import Fonts from '../../utils/Fonts';
 import Btn from '../../components/btn';
+import {Linking} from 'react-native';
 
 const {height, width} = Dimensions.get('window');
 
@@ -25,7 +24,10 @@ const ContactUS = ({navigation}) => {
         <Text style={styles.heading}>Contact our customer care center</Text>
         <Text style={styles.heading}>+92-1234556789</Text>
       </View>
-        <Btn title='Call Now'/>
+      <Btn
+        title="Call Now"
+        onPress={() => Linking.openURL(`tel:+92-1234556789`)}
+      />
     </SafeAreaView>
   );
 };
@@ -34,18 +36,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    // width:'90%',
-    // backgroundColor: 'skyblue',
     padding: 16,
   },
   contactContainer: {
     height: height * 0.05,
     width: width,
-    // backgroundColor: 'red',
-    alignItems:'center',
-    justifyContent:'space-evenly',
-    marginVertical:40,
-    // paddingVertical:30
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginVertical: 40,
   },
   heading: {
     ...Fonts.PoppinsRegular,
