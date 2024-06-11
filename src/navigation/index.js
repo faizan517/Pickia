@@ -30,6 +30,7 @@ import CheckOut2 from '../screens/main/CheckOut2';
 import CheckOut3 from '../screens/main/CheckOut3';
 import DeliveryAddress from '../screens/main/DeliveryAddress';
 import Intro from '../screens/Intro';
+import OrderDetails from '../screens/main/OrderDetails';
 
 
 const Stack = createNativeStackNavigator();
@@ -187,7 +188,7 @@ function Navigation({navigation}) {
         <Stack.Screen name="CheckOut3" component={CheckOut3} />
         <Stack.Screen name="Cart" component={Cart} />
         <Stack.Screen name="DeliveryAddress" component={DeliveryAddress} />
-
+        <Stack.Screen name="OrderDetails" component={OrderDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

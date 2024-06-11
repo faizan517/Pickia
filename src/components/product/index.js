@@ -13,6 +13,7 @@ import Colors from '../../utils/Colors';
 import Minus from '../../assets/svgs/minus.svg';
 import {useState} from 'react';
 import Icons from '../../utils/Icons';
+import OrderDetails from '../../screens/main/OrderDetails';
 
 const {height, width} = Dimensions.get('window');
 
@@ -29,6 +30,7 @@ const Product = props => {
     image,
     navigation,
     isWishList,
+    orderDetails,
   } = props;
   return (
     <SafeAreaView>
@@ -128,7 +130,11 @@ const Product = props => {
               elevation: 1,
             },
           ]}>
-          <View style={[styles.primary, {justifyContent: 'space-evenly', flexDirection:'row',}]}>
+          <View
+            style={[
+              styles.primary,
+              {justifyContent: 'space-evenly', flexDirection: 'row'},
+            ]}>
             <Image source={require('../../assets/logos/Rice.png')} />
             <Text
               style={[
@@ -194,42 +200,62 @@ const Product = props => {
                 Banaspati
               </Text>
             </View>
-            <View style={styles.countView}>
-              <TouchableOpacity
-                style={styles.heading}
-                onPress={() => setCount(count - 1)}>
-                <Icons.Trash height={20} width={20} />
-              </TouchableOpacity>
-              <Text
-                style={[
-                  styles.detailDis,
-                  {color: Colors.primary, fontSize: width * 0.05},
-                ]}>
-                {count}{' '}
-              </Text>
-              <TouchableOpacity
-                style={styles.heading}
-                onPress={() => setCount(count + 1)}>
-                <Icons.Plus3 height={25} width={25} />
-                {/* <Text style={styles.countHead}>+</Text> */}
-              </TouchableOpacity>
-            </View>
-            <Text
-              style={[
-                styles.heading2,
-                {
-                  textAlign: 'left',
-                  color: Colors.primary,
-                  fontSize: width * 0.04,
-                },
-              ]}>
-              PKR 700
-            </Text>
+            {orderDetails ? (
+              ''
+            ) : (
+              <View style={styles.countView}>
+                <TouchableOpacity
+                  style={styles.heading}
+                  onPress={() => setCount(count - 1)}>
+                  <Icons.Trash height={20} width={20} />
+                </TouchableOpacity>
+                <Text
+                  style={[
+                    styles.detailDis,
+                    {color: Colors.primary, fontSize: width * 0.05},
+                  ]}>
+                  {count}{' '}
+                </Text>
+                <TouchableOpacity
+                  style={styles.heading}
+                  onPress={() => setCount(count + 1)}>
+                  <Icons.Plus3 height={25} width={25} />
+                </TouchableOpacity>
+              </View>
+            )}
 
-            <View style={[{flexDirection: 'row'}]}>
-              <Icons.Edit2 height={15} width={15} />
-              <Text style={styles.heading2}> Edit</Text>
-            </View>
+            {orderDetails ? (
+              <View
+                style={[
+                  {
+                    flexDirection: 'row',
+                    width: width * 0.6,
+                    justifyContent: 'space-between',
+                    paddingVertical:10
+                  },
+                ]}>
+                <Text style={[styles.heading2, {fontSize: width * 0.04}]}>
+                  {' '}
+                  Quality: 1
+                </Text>
+                <Text
+                  style={[
+                    styles.heading2,
+                    {
+                      textAlign: 'left',
+                      color: Colors.primary,
+                      fontSize: width * 0.04,
+                    },
+                  ]}>
+                  PKR 700
+                </Text>
+              </View>
+            ) : (
+              <View style={[{flexDirection: 'row'}]}>
+                <Icons.Edit2 height={15} width={15} />
+                <Text style={styles.heading2}> Edit</Text>
+              </View>
+            )}
           </View>
         </View>
       )}

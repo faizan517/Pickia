@@ -1,5 +1,4 @@
 import React from 'react';
-import Product from '../../components/product';
 import {
   Text,
   View,
@@ -12,7 +11,6 @@ import {
   ScrollView,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import Search from '../../components/Search';
 import Colors from '../../utils/Colors';
 import Fonts from '../../utils/Fonts';
 import Btn from '../../components/btn';
@@ -32,6 +30,7 @@ const MyOrders = ({navigation}) => {
             title="View"
             style={styles.btn}
             textStyle={[styles.heading3, {color: Colors.white}]}
+            onPress={()=>navigation.navigate('OrderDetails')}
           />
         </View>
       </ScrollView>

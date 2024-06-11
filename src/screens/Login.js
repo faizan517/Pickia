@@ -32,13 +32,14 @@ const Login = ({navigation}) => {
           <Text style={styles.title}>Login</Text>
           <Text style={styles.title2}>Enter Your email and password</Text>
         </View>
-
+<View style={[{height:height*0.25,justifyContent:'space-between'}]} >
         <Input />
         <Input
           title="Password"
           placeholder="******"
           keyboardType="visible-password"
         />
+</View>
         <TouchableOpacity
           style={styles.forgot}
           onPress={() => navigation.navigate('ForgotPassword')}>

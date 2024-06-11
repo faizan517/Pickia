@@ -36,6 +36,10 @@ import Delivery2 from '../assets/svgs/delivery2.svg';
 import Home from '../assets/svgs/home.svg';
 import Briefcase from '../assets/svgs/briefcase.svg';
 import Pickia from '../assets/svgs/pickia.svg';
+import Map from '../assets/svgs/map-pin.svg';
+import Phone from '../assets/svgs/phoneAnother.svg';
+
+
 
 const Icons = {
   Vector,
@@ -76,5 +80,7 @@ const Icons = {
   Home,
   Briefcase,
   Pickia,
+  Phone,
+  Map,
 };
 export default Icons;
