@@ -32,16 +32,42 @@ import DeliveryAddress from '../screens/main/DeliveryAddress';
 import Intro from '../screens/Intro';
 import OrderDetails from '../screens/main/OrderDetails';
 
-
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+function IntroStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{headerShown: false}}
+      initialRouteName="Intro">
+      <Stack.Screen name="Intro" component={Intro} />
+    </Stack.Navigator>
+  );
+}
+
+function AuthStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{headerShown: false}}
+      initialRouteName="Login">
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+    </Stack.Navigator>
+  );
+}
 
 function TabsNavigation() {
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-      }}>
+        contentStyle: {
+          backgroundColor: Colors.white,
+        },
+      }}
+      >
+        
       <Tab.Screen
         name="Home"
         component={HomeScreen}
@@ -113,7 +139,7 @@ function TabsNavigation() {
     </Tab.Navigator>
   );
 }
-function Navigation({navigation}) {
+function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -135,31 +161,17 @@ function Navigation({navigation}) {
             backgroundColor: Colors.white,
           },
         })}
-        initialRouteName="Intro">
-          <Stack.Screen
-          name="Intro"
-          component={Intro}
+        initialRouteName="Login">
+        <Stack.Screen
+          name="IntroStack"
+          component={IntroStack}
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name="Signup"
-          component={Signup}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="ForgotPassword"
-          component={ForgotPassword}
+          name="AuthStack"
+          component={AuthStack}
           options={{
             headerShown: false,
           }}

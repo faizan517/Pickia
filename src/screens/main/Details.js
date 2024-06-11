@@ -99,25 +99,20 @@ const styles = StyleSheet.create({
   CoverView: {
     height: height * 0.2,
     width: width,
-    backgroundColor: 'red',
   },
   DetailsView: {
     height: height * 0.6,
     width: width,
-    // backgroundColor: 'pink',
     paddingVertical: 20,
     paddingHorizontal: 20,
   },
   disView: {
     height: height * 0.065,
     width: width * 0.6,
-    // backgroundColor: 'blue',
     marginVertical: 2,
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 6,
-    // elevation: 5,
-    // backgroundColor: 'white',
     paddingLeft: 15,
   },
   heading: {
@@ -142,12 +137,6 @@ const styles = StyleSheet.create({
     zIndex: 1,
     top: 30,
     left: 15,
-    // height: height * 0.06,
-    // width: width * 0.09,
-    // borderRadius: 5,
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // paddingVertical: 30,
   },
 });
 export default Details;

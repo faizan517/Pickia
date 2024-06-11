@@ -11,8 +11,9 @@ import {
   TouchableOpacity,
   Image,
   Dimensions,
+  SafeAreaView
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+// import {SafeAreaView} from 'react-native-safe-area-context';
 
 const{ height,width} = Dimensions.get('window')
 
@@ -27,7 +28,7 @@ const ForgotPassword = ({navigation}) => {
       <Input />
       <TouchableOpacity style={styles.forgot} onPress={()=>navigation.navigate('ForgotPassword')}>        
       </TouchableOpacity>
-      <Btn style={styles.btn} title='Send' />
+      <Btn style={styles.btn} title='Send' onPress={()=>navigation.navigate('Login')} />
     </SafeAreaView>
   );
 };

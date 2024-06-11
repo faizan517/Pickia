@@ -16,10 +16,14 @@ import Colors from '../../utils/Colors';
 import Fonts from '../../utils/Fonts';
 import Btn from '../../components/btn';
 import Icons from '../../utils/Icons';
+import { useState } from 'react';
+import FadeModal from '../../components/FadeModal';
+import Input from '../../components/Input';
 
 const {height, width} = Dimensions.get('window');
 
 const DeliveryAddress = ({navigation}, props) => {
+  const [modal, setModal] = useState(false);
   const {isEmpty} = props;
   return (
     <SafeAreaView style={styles.container}>
@@ -83,10 +87,26 @@ const DeliveryAddress = ({navigation}, props) => {
           </View>
         </ScrollView>
       )}
-      <TouchableOpacity style={styles.addressView}>
+      <TouchableOpacity style={styles.addressView} onPress={()=>setModal(true)}>
         <Icons.squarePlus />
         <Text style={[styles.heading, {left: 10}]}>Add New Address</Text>
       </TouchableOpacity>
+      <FadeModal isVisible={modal}>
+        <TouchableOpacity style={styles.ripple} onPress={() => setModal(false)}>
+          <Icons.Close />
+        </TouchableOpacity>
+        <Text style={styles.heading}>Add Address</Text>
+        <View style={[{height:height*0.45,justifyContent:'space-evenly'}]}>
+        <Input title='Name' placeholder='Other' />
+        <Input title='Address' placeholder='Building/floor name, Apt/flt number etc' />
+        <Input title='Phone no'  placeholder='+92-123456789' />
+        </View>
+        <Btn
+          title="Save"
+          style={styles.btn2}
+          onPress={() => setModal(false)}
+        />
+      </FadeModal>
     </SafeAreaView>
   );
 };
@@ -138,6 +158,11 @@ const styles = StyleSheet.create({
     width: width * 0.9,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  ripple: {
+    position: 'absolute',
+    left: 10,
+    top: 15,
   },
 });
 export default DeliveryAddress;

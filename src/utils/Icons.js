@@ -38,6 +38,8 @@ import Briefcase from '../assets/svgs/briefcase.svg';
 import Pickia from '../assets/svgs/pickia.svg';
 import Map from '../assets/svgs/map-pin.svg';
 import Phone from '../assets/svgs/phoneAnother.svg';
+import Close from '../assets/svgs/close.svg';
+
 
 
 
@@ -82,5 +84,6 @@ const Icons = {
   Pickia,
   Phone,
   Map,
+  Close,
 };
 export default Icons;

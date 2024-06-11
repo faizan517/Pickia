@@ -32,7 +32,7 @@ const HomeScreen = ({navigation}) => {
         style={styles.header}
         source={require('../../assets/logos/Banner.png')}
       />
-<ScrollView>
+<ScrollView showsVerticalScrollIndicator={false} >
 
       <Text style={styles.heading}>Products</Text>
       <View style={styles.packagesView}>
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     alignItems: 'center',
+    backgroundColor:Colors.white,
     // justifyContent: 'space-evenly',
     // flexDirection:'row'
   },

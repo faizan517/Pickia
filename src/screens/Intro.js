@@ -28,7 +28,7 @@ const Intro = ({navigation}) => {
 <Icons.Pickia/>
 <Text style={styles.title}>Welcome{'\n'}to our store</Text>
 <Text style={styles.title2}>Ger your groceries in as fast as one hour</Text>
-<Btn title='Get Started' style={styles.btn} onPress={()=>navigation.navigate('Login')}/>
+<Btn title='Get Started' style={styles.btn} onPress={()=>navigation.navigate('AuthStack')}/>
 </ImageBackground>
   );
 };
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
   },
   scondary:{
     height:height*0.15,
-    // width:width*0.6,
     backgroundColor:'red',
     alignItems:'center',
     justifyContent:'center'

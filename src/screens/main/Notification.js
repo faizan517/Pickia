@@ -24,13 +24,13 @@ const Details = ({navigation}) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.mainView}>
           <Image source={require('../../assets/logos/Ariel.png')} />
-          <View style={styles.innerView}>
+          <TouchableOpacity style={styles.innerView}>
             <Text style={styles.heading}>Notification Name</Text>
             <Text style={styles.dis}>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
