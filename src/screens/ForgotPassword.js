@@ -13,6 +13,8 @@ import {
   Dimensions,
   SafeAreaView
 } from 'react-native';
+import Fonts from '../utils/Fonts';
+import Colors from '../utils/Colors';
 // import {SafeAreaView} from 'react-native-safe-area-context';
 
 const{ height,width} = Dimensions.get('window')
@@ -45,11 +47,13 @@ const styles = StyleSheet.create({
     color: 'black',
     alignItems: 'center',
     justifyContent: 'center',
+    ...Fonts.PoppinsRegular,
   },
   title2: {
     fontSize: 0.035 * width,
     fontWeight: '300',
-    color: 'black',
+    color: Colors.borderGray,
+    ...Fonts.GiloryMedium,
   },
   title3: {
     fontSize: 0.04 * width,

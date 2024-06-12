@@ -97,19 +97,6 @@ const ProductDetails = ({navigation}, props) => {
             <Edit height={20} width={20} />
           </TouchableOpacity>
         </View>
-        {/* <Text style={styles.detailDis}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry.
-        </Text> */}
-
-        {/* <TouchableOpacity
-          style={styles.heading}
-          onPress={() => 
-            setCount(count + 1)
-          }>
-          <Text>{count} </Text>
-        </TouchableOpacity> */}
       </View>
       <Btn title="Add to Cart" onPress={() => navigation.navigate('Cart')} />
     </SafeAreaView>
@@ -119,36 +106,32 @@ const ProductDetails = ({navigation}, props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor:'skyblue',
     alignItems: 'center',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   primary: {},
   heading: {
-    fontSize: width * 0.06,
+    fontSize: width * 0.065,
     color: Colors.black,
-    ...Fonts.PoppinsExtraBold,
-    fontWeight: 'bold',
+    ...Fonts.Roboto,
+    fontWeight: '500',
   },
   heading2: {
     fontSize: width * 0.04,
     color: Colors.borderGray,
-    ...Fonts.PoppinsRegular,
-    fontWeight: '300',
+    ...Fonts.Roboto,
+    fontWeight: '400',
   },
 
   secondry: {
     flexDirection: 'row',
     width: width * 0.9,
-    // backgroundColor:'red',
     justifyContent: 'space-between',
     alignItems: 'center',
-    // flexWrap:'wrap'
     marginVertical: 20,
   },
   secondryNested: {
-    // height:height*0.075,
-    // backgroundColor: 'pink',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
   },
@@ -158,25 +141,24 @@ const styles = StyleSheet.create({
   },
   detailView: {
     height: height * 0.4,
-    // backgroundColor:'red'
-    // marginVertical:10
   },
   detailHeading: {
     fontSize: width * 0.05,
     color: Colors.black,
-    ...Fonts.PoppinsExtraBold,
-    fontWeight: 'bold',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '500',
   },
   detailDis: {
-    fontSize: width * 0.035,
-    color: Colors.borderGray,
-    ...Fonts.PoppinsExtraLight,
+    fontSize: width * 0.032,
+    color: Colors.black,
+    ...Fonts.PoppinsRegular,
     fontWeight: '300',
+    paddingVertical: 2,
   },
   countView: {
     flexDirection: 'row',
     borderWidth: 1,
-    width: width * 0.22,
+    width: width * 0.25,
     justifyContent: 'space-between',
     textAlign: 'center',
     alignItems: 'center',

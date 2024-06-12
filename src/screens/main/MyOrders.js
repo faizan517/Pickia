@@ -40,11 +40,9 @@ const MyOrders = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     alignItems: 'center',
-    // width:'90%',
-    // backgroundColor: 'skyblue',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   secondaryView: {
     flexDirection: 'row',
@@ -61,8 +59,8 @@ const styles = StyleSheet.create({
   },
   heading3: {
     fontSize: width * 0.04,
-    ...Fonts.PoppinsBold,
-    fontWeight: '800',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '500',
     color: Colors.black,
   },
   btn: {

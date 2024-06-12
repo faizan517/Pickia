@@ -13,6 +13,7 @@ import {
   FlatList,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Colors from '../../utils/Colors';
 
 const {height, width} = Dimensions.get('window');
 
@@ -50,6 +51,7 @@ const ProductList = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:Colors.white,
   },
   ProductListView: {
     alignItems:'center',

@@ -53,16 +53,24 @@ const CheckOut3 = ({navigation}, props) => {
         <Text
           style={[
             styles.heading,
-            {fontSize: width * 0.05, textAlign: 'center'},
+            {
+              ...Fonts.PoppinsRegular,
+              fontSize: width * 0.06,
+              textAlign: 'center',
+            },
           ]}>
           Your Order Has Been {'\n'}Accepted
         </Text>
         <Text style={[styles.heading2, {textAlign: 'center'}]}>
-          Your items has been placcd and is on it’s way to being processed
+          Your items has been placcd and is on{'\n'}it’s way to being processed
         </Text>
       </View>
       <View style={[styles.emptyView, {bottom: 50}]}>
-        <Btn title="Continue Shopping" style={[{width: width * 0.65}]} onPress={()=>navigation.navigate('Home')} />
+        <Btn
+          title="Continue Shopping"
+          style={[{width: width * 0.65}]}
+          onPress={() => navigation.navigate('Home')}
+        />
       </View>
     </SafeAreaView>
   );
@@ -73,6 +81,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   contactContainer: {
     height: height * 0.15,
@@ -81,8 +90,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   heading: {
-    ...Fonts.PoppinsRegular,
-    fontWeight: 'bold',
+    ...Fonts.Roboto,
+    fontWeight: '500',
     fontSize: width * 0.04,
     color: Colors.black,
   },
@@ -93,8 +102,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   heading2: {
-    ...Fonts.PoppinsRegular,
-    fontWeight: '400',
+    ...Fonts.PR,
+    fontWeight: '500',
     fontSize: width * 0.031,
     color: Colors.borderGray,
   },
@@ -108,7 +117,7 @@ const styles = StyleSheet.create({
   },
   emptyView: {
     height: height * 0.5,
-    width: width * 0.5,
+    width: width,
     justifyContent: 'center',
     alignItems: 'center',
   },

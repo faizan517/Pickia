@@ -46,7 +46,7 @@ const Product = props => {
                 PKR {'\n'}
                 {pkrTitle}
               </Text>
-              <AddBtn style={styles.btn} />
+              <AddBtn style={styles.btn} onPress={onPress}/>
             </View>
           </View>
         </View>
@@ -61,7 +61,7 @@ const Product = props => {
               height: width * 0.43,
               borderWidth: 1,
               borderRadius: 20,
-              borderColor: Colors.borderGray,
+              borderColor: Colors.borderGray2,
             },
           ]}>
           <View style={[styles.primary, {justifyContent: 'flex-end'}]}>
@@ -75,7 +75,7 @@ const Product = props => {
               styles.secondry,
               {alignItems: 'center', justifyContent: 'center'},
             ]}>
-            <Text style={styles.heading}>{title}</Text>
+            <Text style={[styles.heading,{}]}>{title}</Text>
           </View>
         </TouchableOpacity>
       )}
@@ -88,6 +88,7 @@ const Product = props => {
               height: height * 0.295,
               borderWidth: 0.5,
               borderRadius: 10,
+              borderColor:Colors.borderGray2,
             },
             style,
           ]}>
@@ -95,13 +96,13 @@ const Product = props => {
             <Image source={require('../../assets/logos/barkat.png')} />
           </TouchableOpacity>
           <View style={[styles.secondry, {width: width * 0.285}]}>
-            <Text style={styles.heading}>{title}</Text>
+            <Text style={[styles.heading,{textAlign:'center'}]}>{title}</Text>
             <Text style={styles.heading2}>{weightTitle}</Text>
             <View style={[styles.tertiary]}>
               <Text
                 style={[
                   styles.heading,
-                  {fontSize: width * 0.045, fontWeight: '700'},
+                  {fontSize: width * 0.045,},
                 ]}>
                 PKR{'\n'}
                 {pkrTitle}
@@ -109,7 +110,7 @@ const Product = props => {
               <AddBtn
                 style={[
                   styles.btn,
-                  {width: width * 0.095, height: height * 0.045},
+                  {width: width * 0.09, height: height * 0.042},
                 ]}
               />
             </View>
@@ -140,7 +141,7 @@ const Product = props => {
               style={[
                 styles.heading,
                 {
-                  ...Fonts.PoppinsBlack,
+                  ...Fonts.PoppinsRegular,
                   fontWeight: '400',
                   fontSize: width * 0.05,
                 },
@@ -286,24 +287,24 @@ const styles = StyleSheet.create({
   },
   heading: {
     ...Fonts.PoppinsRegular,
-    fontWeight: '900',
+    fontWeight: '500',
     fontSize: width * 0.04,
-    textAlign: 'center',
-    color: 'black',
+    textAlign: 'left',
+    color: Colors.black,
   },
   heading2: {
     ...Fonts.PoppinsRegular,
     fontSize: width * 0.03,
+    fontWeight:'400',
     textAlign: 'center',
-    color: 'black',
+    color: Colors.borderGray,
   },
   btn: {
-    width: width * 0.07,
-    height: height * 0.033,
+    width: width * 0.067,
+    height: height * 0.0315,
   },
   countView: {
     flexDirection: 'row',
-    // borderWidth: 1,
     width: width * 0.29,
     justifyContent: 'space-between',
     textAlign: 'center',

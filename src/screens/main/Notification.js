@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     padding: 16,
+    backgroundColor:Colors.white
   },
   mainView: {
     width: width,
@@ -59,13 +60,15 @@ const styles = StyleSheet.create({
   heading: {
     color: Colors.black,
     fontSize: width * 0.04,
-    ...Fonts.PoppinsBlack,
-    fontWeight: '900',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '500',
   },
   dis: {
     color: Colors.black,
     fontSize: width * 0.03,
-    ...Fonts.PoppinsBlack,
+    ...Fonts.PoppinsRegular,
+    fontWeight: '400',
+    textAlign: 'left',
   },
 });
 export default Details;

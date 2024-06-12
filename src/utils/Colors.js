@@ -18,4 +18,5 @@ export default {
   // rowColor: '#F7F7FA',
   // newGray: '#D1CFD7',
   // tableHeader: '#9A99A2',
+  borderGray2:'rgba(226, 226, 226, 1)'
 };

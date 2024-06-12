@@ -35,8 +35,9 @@ const PromoCode = ({navigation}) => {
               right: 15,
               bottom: 5,
               fontSize: width * 0.035,
-              fontWeight: '500',
+              fontWeight: '400',
               color: Colors.primary,
+
             },
           ]}>
           Apply Now
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   mainView: {
     width: width,
@@ -66,15 +68,15 @@ const styles = StyleSheet.create({
   heading: {
     color: Colors.black,
     fontSize: width * 0.05,
-    ...Fonts.PoppinsBlack,
-    fontWeight: '900',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '500',
     paddingVertical: 5,
   },
   dis: {
     color: Colors.borderGray,
     fontSize: width * 0.035,
-    ...Fonts.PoppinsBlack,
-    fontWeight: '500',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '400',
   },
 });
 export default PromoCode;

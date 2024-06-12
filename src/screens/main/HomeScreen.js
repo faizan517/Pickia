@@ -15,16 +15,27 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Search from '../../components/Search';
 import Colors from '../../utils/Colors';
 import Fonts from '../../utils/Fonts';
+import Icons from '../../utils/Icons';
+import ProductList from './ProductList';
 
 const {height, width} = Dimensions.get('window');
 
 const HomeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <View style={[{flexDirection:'row',}]}>
-      <Text style={[styles.heading2,{}]}>Delivering to:</Text>
-      <Text style={[styles.heading2,{}]}>Gulshan,Karachi:</Text>
-      </View> */}
+      <View style={[styles.headView, {}]}>
+        {/* <Text
+          style={[
+            styles.heading2,
+            {color: Colors.primary, paddingHorizontal: 5},
+          ]}>
+          Delivering to:
+        </Text>
+        <Text style={[styles.heading2, {right:65}]}>Gulshan,Karachi</Text>
+        <TouchableOpacity onPress={()=>navigation.navigate('Cart')}>
+        <Icons.CartIcon  />
+        </TouchableOpacity> */}
+      </View>
 
       <Search style={styles.searchBox} />
 
@@ -32,34 +43,33 @@ const HomeScreen = ({navigation}) => {
         style={styles.header}
         source={require('../../assets/logos/Banner.png')}
       />
-<ScrollView showsVerticalScrollIndicator={false} >
-
-      <Text style={styles.heading}>Products</Text>
-      <View style={styles.packagesView}>
-        <Product type="alpha" />
-        <Product type="alpha" />
-        <Product type="alpha" />
-      </View>
-      <Text style={styles.heading}>Top Products</Text>
-      <View style={styles.packagesView}>
-        <Product type="alpha" />
-        <Product type="alpha" />
-        <Product type="alpha" />
-      </View>
-      <View style={styles.groceriesHead}>
-        <Text style={styles.heading}>Groceries</Text>
-        <TouchableOpacity>
-          <Text style={styles.heading2}>See all</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.groceriesView}>
-        <Product type="delta" />
-        <Product type="delta" />
-        <Product type="alpha" />
-        <Product type="alpha" />
-        <Product type="alpha" />
-      </View>
-</ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Text style={styles.heading}>Products</Text>
+        <View style={styles.packagesView}>
+          <Product type="alpha" onPress={()=>navigation.navigate('Cart')}/>
+          <Product type="alpha" onPress={()=>navigation.navigate('Cart')}/>
+          <Product type="alpha" onPress={()=>navigation.navigate('Cart')}/>
+        </View>
+        <Text style={styles.heading}>Top Products</Text>
+        <View style={styles.packagesView}> 
+          <Product type="alpha" onPress={()=>navigation.navigate('Cart')}/>
+          <Product type="alpha" onPress={()=>navigation.navigate('Cart')}/>
+          <Product type="alpha" onPress={()=>navigation.navigate('Cart')}/>
+        </View>
+        <View style={styles.groceriesHead}>
+          <Text style={styles.heading}>Groceries</Text>
+          <TouchableOpacity onPress={()=>navigation.navigate('Categories')}>
+            <Text style={styles.heading2}>See all</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.groceriesView}>
+          <Product type="delta" onPress={()=>navigation.navigate('ProductList')}/>
+          <Product type="delta" onPress={()=>navigation.navigate('ProductList')}/>
+          <Product type="alpha" onPress={()=>navigation.navigate('Cart')}/>
+          <Product type="alpha" onPress={()=>navigation.navigate('Cart')}/>
+          <Product type="alpha" onPress={()=>navigation.navigate('Cart')}/>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -69,9 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     alignItems: 'center',
-    backgroundColor:Colors.white,
-    // justifyContent: 'space-evenly',
-    // flexDirection:'row'
+    backgroundColor: Colors.white,
   },
   header: {
     width: width,
@@ -79,10 +87,8 @@ const styles = StyleSheet.create({
   packagesView: {
     height: height * 0.17,
     width: width * 0.9,
-    // backgroundColor:'skyblue',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // backgroundColor:'red',
   },
   groceriesView: {
     height: height * 0.3,
@@ -90,36 +96,36 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
-    // alignItems:'center'
     alignContent: 'space-between',
-    // alignSelf:'flex-end'
-    // margin:5
   },
   heading: {
-    ...Fonts.PoppinsBlack,
-    fontWeight: '900',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '500',
     fontSize: width * 0.05,
-    color: 'black',
+    color: Colors.black,
     alignSelf: 'flex-start',
-    paddingVertical:5
+    paddingTop: 10,
   },
   heading2: {
-    fontFamily: 'poppins',
+    ...Fonts.PoppinsRegular,
     fontWeight: '400',
     fontSize: width * 0.038,
     color: Colors.borderGray,
-    paddingVertical:10
   },
   groceriesHead: {
-    width: width * 0.9,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-
   },
   searchBox: {
     width: width * 0.85,
-    marginVertical:15
+    marginVertical: 15,
+  },
+  headView: {
+    width: width*0.95,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent:'space-between',
   },
 });
 export default HomeScreen;

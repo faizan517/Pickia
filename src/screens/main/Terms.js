@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    backgroundColor:Colors.white,
     // width:'90%',
     // backgroundColor: 'skyblue',
     padding: 16,
@@ -104,14 +105,14 @@ const styles = StyleSheet.create({
   heading: {
     ...Fonts.PoppinsRegular,
     fontWeight: '400',
-    fontSize: width * 0.0379,
+    fontSize: width * 0.032,
     color: Colors.black,
     lineHeight: 19,
   },
   heading2: {
     ...Fonts.PoppinsRegular,
-    fontWeight: '900',
-    fontSize: width * 0.0379,
+    fontWeight: '500',
+    fontSize: width * 0.037,
     color: Colors.black,
     lineHeight: 19,
   },

@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     alignItems: 'center',
-    // justifyContent: 'center',
+    backgroundColor:Colors.white,
   },
   heading: {
     fontSize: width * 0.04,
@@ -107,14 +107,15 @@ const styles = StyleSheet.create({
   },
   heading2: {
     fontSize: width * 0.05,
-    ...Fonts.PoppinsBold,
-    fontWeight: '800',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '500',
     color: Colors.black,
+    alignSelf:'flex-start'
   },
   heading3: {
     fontSize: width * 0.04,
-    ...Fonts.PoppinsBold,
-    fontWeight: '800',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '500',
     color: Colors.black,
   },
   cartView: {
@@ -129,10 +130,7 @@ const styles = StyleSheet.create({
   promoView: {
     height: height * 0.25,
     width: width,
-    // borderRadius: 7,
-    // backgroundColor: Colors.primary,
     alignItems: 'center',
-    // justifyContent: 'center',
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderBottomColor: Colors.lightGray,
@@ -141,10 +139,7 @@ const styles = StyleSheet.create({
   },
   odView: {
     marginVertical: 15,
-    // width:width*0.9,
-    // backgroundColor:'red',
     height: height * 0.14,
-    // flexDirection:'row',
     justifyContent: 'space-between',
   },
   odViewNested: {

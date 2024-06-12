@@ -52,10 +52,10 @@ const Login = ({navigation}) => {
         <Text style={styles.title4}>
           Not a member yet?
           <Text
-            style={{color: Colors.blue, ...Fonts.PoppinsThin}}
+            style={{color: Colors.blue, ...Fonts.Roboto}}
             onPress={() => navigation.navigate('Signup')}>
-            Register
-          </Text>{' '}
+           {' '}Register
+          </Text>
         </Text>
       </SafeAreaView>
     </KeyboardAwareScrollView>
@@ -80,18 +80,18 @@ const styles = StyleSheet.create({
     color: Colors.black,
     alignItems: 'center',
     justifyContent: 'center',
-    ...Fonts.PoppinsBlack,
+    ...Fonts.PoppinsRegular,
   },
   title2: {
+    ...Fonts.GiloryMedium,
     fontSize: 0.04 * width,
-    fontWeight: '300',
     color: Colors.borderGray,
   },
   title3: {
     fontSize: 0.04 * width,
     fontWeight: '300',
     color: Colors.blue,
-    ...Fonts.PoppinsThin,
+    ...Fonts.Roboto,
   },
   forgot: {
     right: 30,
@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     color: Colors.borderGray,
     bottom: 50,
+    ...Fonts.Roboto,
   },
 });
 export default Login;

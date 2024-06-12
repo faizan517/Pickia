@@ -16,7 +16,7 @@ const Search = props => {
   return (
     <View style={[styles.container, style]}>
       <View style={styles.icon}>
-        <Icons.Vector height={20} width={20} />
+        <Icons.Vector height={17} width={17} />
       </View>
       <TextInput
         style={styles.input }
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     flex:1,
     fontSize: 0.045 * width,
     paddingHorizontal:10,
+    color:Colors.black,
   },
   // icon:{
   //   position:'absolute',

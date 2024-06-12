@@ -86,7 +86,8 @@ const CheckOut2 = ({navigation}, props) => {
                   color: Colors.primary,
                   fontSize: width * 0.045,
                   paddingHorizontal: 10,
-                  fontWeight: '700',
+                  fontWeight: '600',
+                  ...Fonts.PoppinsRegular,
                 },
               ]}>
               <Icons.Home />
@@ -109,7 +110,8 @@ const CheckOut2 = ({navigation}, props) => {
                   color: Colors.black,
                   fontSize: width * 0.045,
                   paddingHorizontal: 10,
-                  fontWeight: '700',
+                  fontWeight: '600',
+                  ...Fonts.PoppinsRegular,
                 },
               ]}>
               <Icons.Briefcase />
@@ -151,6 +153,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   contactContainer: {
     height: height * 0.15,
@@ -159,8 +162,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   heading: {
-    ...Fonts.PoppinsRegular,
-    fontWeight: 'bold',
+    ...Fonts.Roboto,
+    fontWeight: '500',
     fontSize: width * 0.04,
     color: Colors.black,
   },
@@ -171,7 +174,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   heading2: {
-    ...Fonts.PoppinsRegular,
+    ...Fonts.Roboto,
     fontWeight: '400',
     fontSize: width * 0.031,
     color: Colors.borderGray,
@@ -208,6 +211,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     paddingHorizontal: 10,
     marginVertical: 5,
+
   },
   emptyView: {
     height: height * 0.5,

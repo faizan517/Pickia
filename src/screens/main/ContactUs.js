@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   contactContainer: {
     height: height * 0.05,
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
   heading: {
     ...Fonts.PoppinsRegular,
     fontWeight: '400',
-    fontSize: width * 0.05,
+    fontSize: width * 0.045,
     color: Colors.borderGray,
   },
 });

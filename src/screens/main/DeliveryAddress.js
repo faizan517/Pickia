@@ -115,10 +115,11 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   heading: {
     ...Fonts.PoppinsRegular,
-    fontWeight: 'bold',
+    fontWeight: '500',
     fontSize: width * 0.04,
     color: Colors.black,
   },

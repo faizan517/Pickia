@@ -91,10 +91,9 @@ const Details = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // width:'90%',
-    // backgroundColor: 'skyblue',
     alignItems: 'center',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   CoverView: {
     height: height * 0.2,
@@ -119,7 +118,7 @@ const styles = StyleSheet.create({
     fontSize: width * 0.04,
     paddingHorizontal: 10,
     color: Colors.black,
-    ...Fonts.PoppinsBlack,
+    ...Fonts.PoppinsRegular,
     fontWeight: '400',
     lineHeight: width * 0.08,
     textAlign: 'left',
@@ -128,7 +127,7 @@ const styles = StyleSheet.create({
     fontSize: width * 0.04,
     paddingVertical: 1,
     color: Colors.white,
-    ...Fonts.PoppinsBlack,
+    ...Fonts.PoppinsRegular,
     fontWeight: 'bold',
     textAlign: 'left',
   },

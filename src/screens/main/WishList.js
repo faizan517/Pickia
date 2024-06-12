@@ -28,7 +28,7 @@ const WishList = ({navigation, route}) => {
     <SafeAreaView style={styles.container}>
       {/* <Icons.Cart2/>
       <Text style={styles.heading}>Add items to get started</Text> */}
-      <Text style={styles.heading2}>Your Cart</Text>
+      <Text style={[styles.heading2,{alignSelf:'flex-start'}]}>Your Cart</Text>
       <View
         style={[
           {
@@ -62,11 +62,9 @@ const WishList = ({navigation, route}) => {
 
       </ScrollView>
       <View
-        style={[
-          {height: height * 0.14, justifyContent: 'space-between', top: 50},
-        ]}>
+        style={styles.btnView}>
           
-        <Btn title="Add to Cart" />
+        <Btn title="Add to Cart" onPress={()=>navigation.navigate('Cart')} />
         <Btn title="Clear Cart" />
       </View>
     </SafeAreaView>
@@ -75,9 +73,10 @@ const WishList = ({navigation, route}) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     padding: 16,
     alignItems: 'center',
+    backgroundColor:Colors.white,
     // justifyContent: 'center',
   },
   heading: {
@@ -88,14 +87,14 @@ const styles = StyleSheet.create({
   },
   heading2: {
     fontSize: width * 0.05,
-    ...Fonts.PoppinsBold,
-    fontWeight: '800',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '500',
     color: Colors.black,
   },
   heading3: {
     fontSize: width * 0.04,
-    ...Fonts.PoppinsBold,
-    fontWeight: '800',
+    ...Fonts.PoppinsRegular,
+    fontWeight: '400',
     color: Colors.black,
   },
   cartView: {
@@ -110,10 +109,7 @@ const styles = StyleSheet.create({
   promoView: {
     height: height * 0.25,
     width: width,
-    // borderRadius: 7,
-    // backgroundColor: Colors.primary,
     alignItems: 'center',
-    // justifyContent: 'center',
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderBottomColor: Colors.lightGray,
@@ -122,10 +118,7 @@ const styles = StyleSheet.create({
   },
   odView: {
     marginVertical: 15,
-    // width:width*0.9,
-    // backgroundColor:'red',
     height: height * 0.14,
-    // flexDirection:'row',
     justifyContent: 'space-between',
   },
   odViewNested: {
@@ -135,8 +128,9 @@ const styles = StyleSheet.create({
   },
   btnView:{
     width:width*0.9,
-    backgroundColor:'red',
-    height: height * 0.1,
+    height: height * 0.18,
+    justifyContent: 'space-around',
+    alignItems:'center'
   },
   ScrollView:{
     height:height*0.55,

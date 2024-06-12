@@ -50,16 +50,16 @@ const CheckOut = ({navigation}) => {
       <Text
         style={[
           styles.heading,
-          {alignSelf: 'flex-start', marginVertical: 5, marginHorizontal: 5},
+          {...Fonts.PoppinsRegular,alignSelf: 'flex-start', marginVertical: 5, marginHorizontal: 5},
         ]}>
         Select Your Delivery Timing
       </Text>
       <Text
         style={[
           styles.heading,
-          {alignSelf: 'flex-start', marginVertical: 5, marginHorizontal: 5},
+          {...Fonts.PoppinsRegular,alignSelf: 'flex-start', marginVertical: 5, marginHorizontal: 5},
         ]}>
-        Tuesday
+        Delivery Day
       </Text>
       <ScrollView
         style={styles.innerView2}
@@ -114,7 +114,7 @@ const CheckOut = ({navigation}) => {
         style={[
           [
             styles.heading,
-            {alignSelf: 'flex-start', marginVertical: 5, marginHorizontal: 5},
+            {...Fonts.PoppinsRegular,alignSelf: 'flex-start', marginVertical: 5, marginHorizontal: 5},
           ],
         ]}>
         Timing
@@ -123,7 +123,7 @@ const CheckOut = ({navigation}) => {
         <Text
           style={[
             styles.heading2,
-            {color: Colors.primary, fontSize: width * 0.04},
+            {color: Colors.primary,...Fonts.PoppinsRegular, fontSize: width * 0.04},
           ]}>
           10:00 AM - 5:00 PM
         </Text>
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     padding: 16,
-    
+    backgroundColor:Colors.white,
   },
   contactContainer: {
     height: height * 0.15,
@@ -149,10 +149,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-evenly',
     flexDirection: 'row',
+    
   },
   heading: {
-    ...Fonts.PoppinsRegular,
-    fontWeight: 'bold',
+    ...Fonts.Roboto,
+    fontWeight: '500',
     fontSize: width * 0.04,
     color: Colors.black,
     // lineHeight:14
@@ -165,7 +166,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   heading2: {
-    ...Fonts.PoppinsRegular,
+    ...Fonts.Roboto,
     fontWeight: '400',
     fontSize: width * 0.031,
     color: Colors.borderGray,

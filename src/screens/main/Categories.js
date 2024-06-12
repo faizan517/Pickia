@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     // width:'90%',
     // backgroundColor: 'skyblue',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   CategoriesView: {
     width: width * 0.9,

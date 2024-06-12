@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     padding: 16,
+    backgroundColor:Colors.white,
   },
   ProfileImgVIew: {
     height: height * 0.17,

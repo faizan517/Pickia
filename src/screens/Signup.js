@@ -62,10 +62,10 @@ const Signup = ({navigation}) => {
         <Text style={styles.title4}>
           Already have an account?
           <Text
-            style={{color: Colors.blue, ...Fonts.PoppinsThin}}
+            style={{color: Colors.blue, ...Fonts.Roboto,}}
             onPress={() => navigation.navigate('Login')}>
-            Login
-          </Text>{' '}
+            {' '}Login
+          </Text>
         </Text>
       </SafeAreaView>
     </KeyboardAwareScrollView>
@@ -82,33 +82,32 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 0.07 * width,
     fontWeight: '500',
-    color: 'black',
+    color: Colors.black,
     alignItems: 'center',
     justifyContent: 'center',
-    fontFamily: 'Poppins',
+    ...Fonts.PoppinsRegular
   },
   title2: {
     fontSize: 0.04 * width,
     fontWeight: '300',
-    color: 'black',
+    color: Colors.borderGray,
+    ...Fonts.Roboto,
+
   },
   title3: {
     paddingHorizontal: 29,
-    fontSize: 0.039 * width,
-    fontWeight: '300',
+    fontSize: 0.035 * width,
+    fontWeight: '400',
     color: Colors.borderGray,
-    bottom: 40,
-  },
-  forgot: {
-    // right: 36,
-    // bottom: 10,
-    // alignSelf: 'flex-end',
+    bottom: 30,
+    ...Fonts.PoppinsRegular
   },
   title4: {
     fontSize: 0.04 * width,
     fontWeight: '300',
     color: Colors.borderGray,
-    bottom: 30,
+    bottom: 25,
+    ...Fonts.Roboto,
   },
   primary: {
     alignItems: 'center',

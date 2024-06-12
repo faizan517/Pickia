@@ -55,6 +55,24 @@ const Fonts = StyleSheet.create({
   PoppinsThinItalic: {
     fontFamily: 'Poppins-ThinItalic',
   },
+  GiloryMedium: {
+    fontFamily: 'Gilroy-Medium',
+  },
+  GiloryBold: {
+    fontFamily: 'Gilroy-Bold',
+  },
+  GiloryHeavy: {
+    fontFamily: 'Gilroy-Heavy',
+  },
+  GiloryRegular: {
+    fontFamily: 'Gilroy-Regular',
+  },
+  GiloryLight: {
+    fontFamily: 'Gilroy-Light',
+  },
+  Roboto: {
+    fontFamily: 'Roboto-Regular',
+  },
 });
 
 export default Fonts;

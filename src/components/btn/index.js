@@ -49,10 +49,11 @@ const styles = StyleSheet.create({
     paddingRight: 30,
   },
   title: {
-    fontSize: 0.06 * width,
+    fontSize: 0.055 * width,
     fontWeight: '500',
-    color: 'white',
+    color: Colors.white,
     ...Fonts.PoppinsRegular,
+    textAlign:'center',
   },
 });
 export default Btn;

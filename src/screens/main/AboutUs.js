@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   heading: {
     ...Fonts.PoppinsRegular,
     fontWeight: '400',
-    fontSize: width * 0.0379,
+    fontSize: width * 0.033,
     color: Colors.black,
     lineHeight:19
   },

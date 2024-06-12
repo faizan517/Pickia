@@ -20,7 +20,7 @@ const Input = props => {
       <TextInput
         style={styles.input}
         placeholder={placeholder}
-        placeholderTextColor={Colors.black}
+        placeholderTextColor={Colors.borderGray}
         editable={editable}
         keyboardType={keyboardType}
       />
@@ -31,19 +31,18 @@ const styles = StyleSheet.create({
   container: {
     width: width*0.85,
     alignSelf: 'center',
-    // backgroundColor:'red',
   },
   title: {
-    fontSize: 0.06 * width,
+    fontSize: 0.055 * width,
     fontWeight: '400',
     marginLeft: 1,
-    color:Colors.borderGray,
+    color:Colors.black,
     ...Fonts.PoppinsRegular,
   },
   input: {
     fontSize: 0.05 * width,
     borderBottomWidth: 1,
-    borderBottomColor: 'gray',
+    borderBottomColor: Colors.borderGray2,
     color:Colors.black,
   },
 });
